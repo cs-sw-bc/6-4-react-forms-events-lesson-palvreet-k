@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 // 4. TODO: Accept the handler as a prop and attach it to the button's onClick
-function LoyaltyButton() {
-  return <button>Stamp My Card</button>
+function LoyaltyButton({buttonText, onSmash}) {
+  return <button onClick={onSmash}>{buttonText}</button>
 }
 
 function LoyaltyCard() {
@@ -19,7 +19,7 @@ function LoyaltyCard() {
       <h2>Loyalty Card</h2>
       <p>Points:  {points}</p>
       {/* 3. TODO: Pass handleStamp to LoyaltyButton as a prop called onStamp */}
-      <LoyaltyButton />
+      <LoyaltyButton buttonText="are you loyal?" onSmash={()=>{alert('We appreciate your loyalty, 2 coffe free')}}/>
     </div>
   )
 }
